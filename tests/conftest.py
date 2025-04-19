@@ -1,11 +1,34 @@
 import pytest
+
 from playwright.sync_api import sync_playwright, Page
+from config.read_config import GetConfig
+from utils import globl
+
+
+@pytest.fixture(scope="session", autouse=True)
+def get_config():
+    """
+    This fixture reads config file
+
+    :return:
+            Nothing
+    """
+    # Get configuration settings
+    config = GetConfig()
+    config.read_all_sections()
+
+    return
 
 
 @pytest.fixture(scope="session")
-def browser():
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False, args=["--start-maximized"])
+def browser(get_config):
+
+    with sync_playwright() as cont_mgr:
+        choose_browser = {'chromium': cont_mgr.chromium,
+                          'firefox': cont_mgr.firefox,
+                          'webkit': cont_mgr.webkit}
+
+        browser = choose_browser[globl.browser].launch(headless=False, args=["--start-maximized"])
         yield browser
         browser.close()
 
