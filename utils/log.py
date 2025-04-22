@@ -179,6 +179,8 @@ def error(msg):
 
     globl.test_counters['total_errors'] += 1
 
+    assert False
+
 
 def exception(msg):
     """
@@ -195,6 +197,8 @@ def exception(msg):
 
     globl.test_counters['total_exceptions'] += 1
 
+    assert False
+
 
 def critical(msg):
     """
@@ -210,6 +214,8 @@ def critical(msg):
     logger.critical(str(msg))
 
     globl.test_counters['total_exceptions'] += 1
+
+    assert False
 
 
 def close_logger():
