@@ -20,11 +20,8 @@ test_counters = {'total_checkpoints': 0,
 
 # List of project parameters
 project_name = 'shady-meadows-repo'
-project_path = None  # 'C:\\Users\\oburenok\\PycharmProjects\\Luma'
-reports_path = None
-driver_chrome_path = '\\drivers\\chrome\\chromedriver.exe'
-driver_firefox_path = '\\drivers\\firefox\\geckodriver.exe'
-driver_edge_path = '\\drivers\\edge\\msedgedriver.exe'
+project_path = None  # 'C:\\projects\\shady-meadows-repo'
+reports_path = None  # 'C:\\projects\\shady-meadows-repo\\reports'
 
 
 # Logging
