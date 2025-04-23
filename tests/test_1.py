@@ -1,3 +1,4 @@
+"""This is an automation test script."""
 import re
 
 from playwright.sync_api import Page, expect
@@ -5,6 +6,7 @@ from utils import log, globl
 
 
 def test_has_title(page: Page):
+    """This test verifies something"""
 
     log.step("1.001", "Navigating to the tested page.")
     page.goto("https://automationintesting.online/")
@@ -19,6 +21,7 @@ def test_has_title(page: Page):
 
 
 def test_has_title_2(page: Page):
+    """This test verifies something"""
 
     log.step("2.001", "Navigating to the tested page.")
     page.goto("https://automationintesting.online/admin")
@@ -29,16 +32,22 @@ def test_has_title_2(page: Page):
     log.warning("This is test for WARNING message in log-file.")
 
 
-def test_error(page: Page):
+def test_error():
+    """This test verifies something"""
+
     log.error("This is test for ERROR message in log-file.")
     log.message("Any new actions are impossible.")
 
 
-def test_critical(page: Page):
+def test_critical():
+    """This test verifies something"""
+
     log.critical("This is test for CRITICAL message in log-file.")
     log.message("Any new actions are impossible.")
 
 
-def test_exception(page: Page):
+def test_exception():
+    """This test verifies something"""
+    
     log.exception("This is test for EXCEPTION message in log-file.")
     log.message("Any new actions are impossible.")
