@@ -1,7 +1,6 @@
 """
 Logging and settings
 """
-import datetime
 import datetime as dt
 import logging
 import os
@@ -36,7 +35,7 @@ def custom_logger(log_level=logging.INFO):
     if not os.path.isdir(globl.test_report_path):
         os.makedirs(globl.test_report_path)
 
-    now = datetime.datetime.now()
+    now = dt.datetime.now()
 
     globl.test_report_file = globl.test_report_path + '\\' + globl.test_name + now.strftime("_%Y%m%d_%H%M%S") + '.log'
 
@@ -230,4 +229,3 @@ def close_logger():
 
     logger.removeHandler(_file_handler)
     logger.removeHandler(_console_handler)
-
