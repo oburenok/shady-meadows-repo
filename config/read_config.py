@@ -33,9 +33,9 @@ class GetConfig:
         if path[-len_name:] == globl.project_name:
             globl.project_path = path
             return path
-        else:
-            path = os.path.split(path)[0]
-            self.get_project_path(path)
+        
+        path = os.path.split(path)[0]
+        self.get_project_path(path)
 
     def read_all_sections(self):
         """
