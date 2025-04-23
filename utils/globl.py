@@ -1,4 +1,4 @@
-
+"""Module contains global project variables."""
 
 # List of global parameters for Environment
 host = None
