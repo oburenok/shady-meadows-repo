@@ -1,13 +1,13 @@
 """Module providing a pytest fixtures for automation testing."""
 import os
-import pytest
 
+from pytest import fixture
 from playwright.sync_api import sync_playwright, Page
 from config.read_config import GetConfig
 from utils import globl, log
 
 
-@pytest.fixture(scope="session", autouse=True)
+@fixture(scope="session", autouse=True)
 def get_config():
     """
     This fixture reads config file.
@@ -19,7 +19,7 @@ def get_config():
     config.read_all_sections()
 
 
-@pytest.fixture(scope="module", autouse=True)
+@fixture(scope="module", autouse=True)
 def setup_logging(get_config):
     """
     This fixture setup logging.
@@ -34,7 +34,7 @@ def setup_logging(get_config):
     log.close_logger()
 
 
-@pytest.fixture(scope="module")
+@fixture(scope="module")
 def browser(setup_logging):
     """
     This fixture starts configured browser.
@@ -54,7 +54,7 @@ def browser(setup_logging):
         browser.close()
 
 
-@pytest.fixture(scope="function", autouse=True)
+@fixture(scope="function", autouse=True)
 def page(browser) -> Page:
     """
     This fixture creates a new page in the browser context.
@@ -70,7 +70,7 @@ def page(browser) -> Page:
     context.close()
 
 
-@pytest.fixture(scope="function", autouse=True)
+@fixture(scope="function", autouse=True)
 def test_separator():
     """
     This fixture separates test methods in log file and resets test counters
