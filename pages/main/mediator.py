@@ -31,7 +31,7 @@ class Mediator:
     def click_element(self, element):
         """
         Click to element
-        :param element: web-element, found by webdriver
+        :param element: web-element
         :type element: web-element
         """
         element.click()
