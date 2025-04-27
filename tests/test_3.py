@@ -18,4 +18,3 @@ def test_page_object(home_page: HomePage):
 
     log.step("1.004", "Navigate to login page.")
     home_page.click_admin()
-    # time.sleep(2)
