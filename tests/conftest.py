@@ -4,6 +4,7 @@ import os
 from pytest import fixture
 from playwright.sync_api import sync_playwright, Page
 from config.read_config import GetConfig
+from pages.home_page.home_page import HomePage
 from utils import globl, log
 
 
@@ -54,7 +55,7 @@ def browser(setup_logging):
         browser.close()
 
 
-@fixture(scope="function", autouse=True)
+@fixture(scope="module", autouse=True)
 def page(browser) -> Page:
     """
     This fixture creates a new page in the browser context.
@@ -68,6 +69,18 @@ def page(browser) -> Page:
     yield page
 
     context.close()
+
+
+@fixture(scope="module")
+def home_page(page):
+    """
+    This fixture creates instance of Home Page.
+    :param page:
+    :return:
+    """
+    h_page = HomePage(page)
+
+    yield h_page
 
 
 @fixture(scope="function", autouse=True)
