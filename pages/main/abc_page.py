@@ -8,9 +8,9 @@ class ABCPage(abc.ABC):
     This is abstract class for all pages
     """
     @abc.abstractmethod
-    def login(self):
+    def click_admin(self):
         """
-        This method performs login on website.
+        This method navigates to login page.
         Must be implemented in child classes.
         """
 
