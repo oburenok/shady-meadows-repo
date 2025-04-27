@@ -15,7 +15,7 @@ class Mediator:
     def find_element(self, loc):
         """
         Find element on the page
-        :param loc: element locator. 
+        :param loc: element locator.
                     Should look like {'role': 'button', 'name': 'Check Availability'}
         :type loc: dict
 
