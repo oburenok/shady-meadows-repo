@@ -5,6 +5,7 @@ from pytest import fixture
 from playwright.sync_api import sync_playwright, Page
 from config.read_config import GetConfig
 from pages.home_page.home_page import HomePage
+from pages.login_page.login_page import LoginPage
 from utils import globl, log
 
 
@@ -81,6 +82,18 @@ def home_page(page):
     h_page = HomePage(page)
 
     yield h_page
+
+
+@fixture(scope="module")
+def login_page(page):
+    """
+    This fixture creates instance of Login Page.
+    :param page:
+    :return:
+    """
+    l_page = LoginPage(page)
+
+    yield l_page
 
 
 @fixture(scope="function", autouse=True)
