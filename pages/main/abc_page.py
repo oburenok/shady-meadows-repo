@@ -7,17 +7,11 @@ class ABCPage(abc.ABC):
     """
     This is abstract class for all pages
     """
-    @abc.abstractmethod
-    def click_admin(self):
-        """
-        This method navigates to login page.
-        Must be implemented in child classes.
-        """
 
     @abc.abstractmethod
-    def check_availability(self):
+    def navigate_to_page(self):
         """
-        This method should click on 'Check Availability' button .
+        This method should navigate to specified webpage.
         Must be implemented in child classes.
         """
 
