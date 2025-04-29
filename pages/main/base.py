@@ -18,32 +18,8 @@ class BasePage(ABCPage, Mediator):
     page_url = "https://automationintesting.online/"
 
     locator = {
-        "check_availability": {'role': 'button', 'name': 'Check Availability'},
-        "admin": {'role': 'link', 'name': 'Admin'}
+        "to_be_defined": {'role': 'to_be_defined', 'name': 'to_be_defined'},
         }
-
-    def click_admin(self):
-        """
-        Navigate to login page.
-
-        Example:
-            self.home_page.check_availability()
-
-        :return:
-                nothing
-        """
-        log.message("Clicking link Admin in menu.")
-        self.click_element(self.find_element(self.locator["admin"]))
-
-    def check_availability(self):
-        """
-        This method clicks button 'Check Availability'.
-
-        Example:
-            self.home_page.check_availability()
-        """
-        log.message("Clicking button 'Check Availability'.")
-        self.click_element(self.find_element(self.locator["check_availability"]))
 
     def load(self):
         """
