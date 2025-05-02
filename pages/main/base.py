@@ -18,7 +18,7 @@ class BasePage(ABCPage, Mediator):
     page_url = "https://automationintesting.online/"
 
     locator = {
-        "to_be_defined": {'role': 'to_be_defined', 'name': 'to_be_defined'},
+        "to_be_defined": "//textarea[@id='description']",
         }
 
     def load(self):
