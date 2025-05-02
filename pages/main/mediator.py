@@ -15,18 +15,17 @@ class Mediator:
     def find_element(self, loc):
         """
         Find element on the page
-        :param loc: element locator.
-                    Should look like {'role': 'button', 'name': 'Check Availability'}
-        :type loc: dict
+        :param loc: xpath of the element
+        :type loc: str
 
         :return: Locator
 
         Example:
                 self.find_element(self.locator["check_availability"])
                 OR
-                self.find_element({'role': 'button', 'name': 'Check Availability'})
+                self.find_element("xpath=//button[@class='btn btn-primary w-100 py-2']")
         """
-        return self.page.get_by_role(**loc, exact=True)
+        return self.page.locator(loc)
 
     def click_element(self, element):
         """
