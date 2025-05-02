@@ -18,8 +18,8 @@ class HomePage(BasePage, Mediator):
         Mediator.__init__(self, page)
 
     home_locator = {
-        "check_availability": {'role': 'button', 'name': 'Check Availability'},
-        "admin": {'role': 'link', 'name': 'Admin'}
+        "check_availability": "xpath=//button[@class='btn btn-primary w-100 py-2']",
+        "admin": "xpath=//a[text()='Admin']"
     }
 
     def click_admin(self):
