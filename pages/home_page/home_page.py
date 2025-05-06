@@ -19,7 +19,8 @@ class HomePage(BasePage, Mediator):
 
     home_locator = {
         "check_availability": "xpath=//button[@class='btn btn-primary w-100 py-2']",
-        "admin": "xpath=//a[text()='Admin']"
+        "admin": "xpath=//a[text()='Admin']",
+        "message": "xpath=//textarea[@id='description']"
     }
 
     def click_admin(self):
