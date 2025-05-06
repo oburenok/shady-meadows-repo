@@ -11,18 +11,19 @@ class LoginPage(BasePage, Mediator):
     This class covers elements and
     actions needed to interact with the homepage
     """
+    page_url = "https://automationintesting.online/admin"
 
     def __init__(self, page):
         self.page = page
         Mediator.__init__(self, page)
 
-    page_url = "https://automationintesting.online/admin"
-
     login_locator = {
-        "front_page": {'role': 'link', 'name': 'Front Page'},
-        "logout": {'role': 'button', 'name': 'Logout'},
-        "username": {'role': 'textbox', 'name': 'Enter username'},
-        "password": {'role': 'textbox', 'name': 'Password'},
+        "front_page": "xpath=//a[@id='frontPageLink']",
+        "logout": "xpath=//button[contains(text(),'Logout')]",
+        "username": "xpath=//input[@id='username']",
+        "password": "xpath=//input[@id='password']",
+        "login": "xpath=//button[@id='doLogin']",
+        "message": "xpath=//div[@class='alert alert-danger']"
     }
 
     def click_front_page(self):
@@ -51,7 +52,7 @@ class LoginPage(BasePage, Mediator):
         log.message("Clicking Logout.")
         self.click_element(self.find_element(self.login_locator["logout"]))
 
-    def login(self, user: str, password: str):
+    def login(self, user: str, password: str, click_login=True):
         """
         Navigate back to home page. (DRAFT METHOD)
 
@@ -59,6 +60,8 @@ class LoginPage(BasePage, Mediator):
         :type user: str
         :param password: password
         :type password: str
+        :param click_login: set to False if you don't need to click button Login after entering username/password.
+        :type click_login: bln
 
         Example:
             self.login.click_front_page()
@@ -67,5 +70,8 @@ class LoginPage(BasePage, Mediator):
                 nothing
         """
         log.message("Entering credential.")
-        elem = self.find_element(self.login_locator["username"])
-        elem.fill(user)
+        self.find_element(self.login_locator["username"]).fill(user)
+        self.find_element(self.login_locator["password"]).fill(password)
+
+        if click_login:
+            self.click_element(self.find_element(self.login_locator["login"]))
