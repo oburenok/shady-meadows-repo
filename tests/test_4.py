@@ -19,3 +19,5 @@ def test_page_object(login_page: LoginPage):
     login_page.load()
     login_page.login("SuperUser", "qwerty12345")
 
+    log.step("1.004", "Verifying error message.")
+    login_page.verify_error_message("Invalid credentials.")
