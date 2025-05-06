@@ -68,9 +68,9 @@ class LoginPage(BasePage):
         :return:
                 nothing
         """
-        log.message("Entering credential.")
-        self.find_element(self.login_locator["username"]).fill(user)
-        self.find_element(self.login_locator["password"]).fill(password)
+        log.message("Entering credentials.")
+        self.enter_value(self.login_locator["username"], user)
+        self.enter_value(self.login_locator["password"], password)
 
         if click_login:
             self.click_element(self.find_element(self.login_locator["login"]))
