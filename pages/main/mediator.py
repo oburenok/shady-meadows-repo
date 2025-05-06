@@ -1,8 +1,9 @@
 """
 This is the mediator, it contains all methods which call Selenium WebDriver.
 """
-
+from playwright.sync_api import expect
 from playwright.sync_api import Page
+from utils import globl, log
 
 
 class Mediator:
@@ -34,3 +35,28 @@ class Mediator:
         :type element: web-element
         """
         element.click()
+
+    def verify_text(self, loc, text):
+        """
+        Verifies text for defined locator.
+
+        :param loc: xpath of the element
+        :type loc: str
+        :param text: expected text
+        :type text: str
+
+        :return:
+                nothing
+        """
+        try:
+            globl.test_counters['total_checkpoints'] += 1
+
+            actual_text = self.find_element(loc).text_content()
+
+            if actual_text == text:
+                log.message(f"CHECKPOINT: Actual text '{actual_text}' is equal to expected text '{text}'.")
+            else:
+                log.warning(f"CHECKPOINT: Actual text '{actual_text}' is NOT equal to expected text '{text}'.")
+
+        except Exception as exc:
+            log.exception(str(exc))
