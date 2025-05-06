@@ -2,11 +2,10 @@
 This class covers all the elements and actions needed to interact with the homepage
 """
 from pages.main.base import BasePage
-from pages.main.mediator import Mediator
 from utils import log
 
 
-class LoginPage(BasePage, Mediator):
+class LoginPage(BasePage):
     """
     This class covers elements and
     actions needed to interact with the homepage
@@ -15,7 +14,6 @@ class LoginPage(BasePage, Mediator):
 
     def __init__(self, page):
         self.page = page
-        Mediator.__init__(self, page)
 
     login_locator = {
         "front_page": "xpath=//a[@id='frontPageLink']",
@@ -44,7 +42,7 @@ class LoginPage(BasePage, Mediator):
         Logout and navigate back to home page.
 
         Example:
-            self.login_page.click_logout()
+            login_page.click_logout()
 
         :return:
                 nothing
@@ -60,11 +58,12 @@ class LoginPage(BasePage, Mediator):
         :type user: str
         :param password: password
         :type password: str
-        :param click_login: set to False if you don't need to click button Login after entering username/password.
+        :param click_login: set to False if you don't need to click
+                            button Login after entering username/password.
         :type click_login: bln
 
         Example:
-            self.login.click_front_page()
+            login_page.login("SuperUser", "qwerty12345")
 
         :return:
                 nothing
@@ -75,3 +74,18 @@ class LoginPage(BasePage, Mediator):
 
         if click_login:
             self.click_element(self.find_element(self.login_locator["login"]))
+
+    def verify_error_message(self, message):
+        """
+        Verifies message.
+
+        :param message: error or warning message
+        :type message: str
+
+        Example:
+            login_page.verify_message("Invalid credentials")
+
+        :return:
+                nothing
+        """
+        self.verify_text(self.login_locator["message"], message)
