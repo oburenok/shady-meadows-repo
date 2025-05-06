@@ -36,6 +36,20 @@ class Mediator:
         """
         element.click()
 
+    def enter_value(self, loc, value):
+        """
+        Enter value in field by locator
+
+        :param loc: xpath of the element
+        :type loc: str
+        :param value: value
+        :type value: str, int, float
+
+        :param loc: xpath of the element
+        :type loc: str
+        """
+        self.find_element(loc).fill(value)
+
     def verify_text(self, loc, text):
         """
         Verifies text for defined locator.
