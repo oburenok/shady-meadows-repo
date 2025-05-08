@@ -1,10 +1,12 @@
 """This is an automation test script."""
 import re
+import pytest
 
 from playwright.sync_api import Page, expect
 from utils import log, globl
 
 
+@pytest.mark.sanity
 def test_has_title(page: Page):
     """This test verifies something"""
 
@@ -20,6 +22,7 @@ def test_has_title(page: Page):
     log.screenshot("My_screenshot")
 
 
+@pytest.mark.smoke
 def test_has_title_2(page: Page):
     """This test verifies something"""
 

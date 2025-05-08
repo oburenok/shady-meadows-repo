@@ -1,9 +1,12 @@
 """This is an automation test script."""
+import pytest
 
 from pages.login_page.login_page import LoginPage
 from utils import log
 
 
+@pytest.mark.sanity
+@pytest.mark.run_every_night
 def test_page_object(login_page: LoginPage):
     """This test verifies Login page"""
 
