@@ -4,6 +4,7 @@
 host = None
 url = None
 browser = None
+params = None
 
 
 # List of test parameters

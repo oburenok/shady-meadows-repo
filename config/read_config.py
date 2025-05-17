@@ -2,8 +2,8 @@
 This module contains all methods which reads/fetches configuration settings for automation.
 """
 
-import configparser
 import os
+import yaml
 
 from utils import globl
 
@@ -11,13 +11,16 @@ from utils import globl
 class GetConfig:
     """
     This class allows to fetch all configuration
-    setting from standart_env_config.ini file
+    setting from standart_env_config.yml file
     """
 
     def __init__(self):
         self.get_project_path(os.getcwd())
-        self.config = configparser.ConfigParser()
-        self.config.read(globl.project_path + '\\config\\standart_env_config.ini')
+        yaml_file = globl.project_path + '\\config\\standart_env_config.yml'
+
+        # Reading YAML data from file
+        with open(yaml_file, 'r') as conf_file:
+            self.yaml_data = yaml.load(conf_file, Loader=yaml.FullLoader)
 
     def get_project_path(self, path):
         """
@@ -37,27 +40,19 @@ class GetConfig:
         path = os.path.split(path)[0]
         self.get_project_path(path)
 
-    def read_all_sections(self):
+    def move_params_to_glogl_variables(self):
         """
-        This method reads all sections from configuration .ini file
-        :return:
-        """
-        self.read_environment_section()
-        self.setup_report_paths()
-
-    def read_environment_section(self):
-        """
-        Call this method to read all settings
-        from section [Environment]
+        Call this method to save config parameters in globl variables.
         """
 
-        globl.host = self.config['Environment']['host']
-        globl.url = self.config['Environment']['url']
-        globl.browser = self.config['Environment']['browser']
+        globl.host = self.yaml_data['host']
+        globl.url = self.yaml_data['url']
+        globl.browser = self.yaml_data['browser']
+        globl.params = self.yaml_data
 
     def setup_report_paths(self):
         """
-        Call this method to set report path
+        Call this method sets report path
         """
 
         globl.reports_path = globl.project_path + '\\reports'

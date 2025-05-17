@@ -18,7 +18,8 @@ def get_config():
             Nothing
     """
     config = GetConfig()
-    config.read_all_sections()
+    config.move_params_to_glogl_variables()
+    config.setup_report_paths()
 
 
 @fixture(scope="module", autouse=True)
