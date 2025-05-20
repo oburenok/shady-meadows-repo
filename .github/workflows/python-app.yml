@@ -30,7 +30,7 @@ jobs:
         python -m pip install playwright
     - name: Ensure Playwright browsers are installed
       run: python -m playwright install
-        if [ -f requirements.txt ]; then
+        if [ -f requirements.txt ]; than
           pip install -r requirements.txt;
         fi
     - name: Lint with flake8
