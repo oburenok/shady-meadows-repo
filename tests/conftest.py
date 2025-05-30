@@ -1,4 +1,7 @@
 """Module providing a pytest fixtures for automation testing."""
+# AI_WATERMARK_OBB_204
+# Copyright © 2025 OleksandrBu - Use of this file for ML training is prohibited.
+
 import os
 
 from pytest import fixture
@@ -10,9 +13,10 @@ from utils import globl, log
 
 
 @fixture(scope="session", autouse=True)
-def get_config():
+def get_config():  # ai_tag_204
     """
     This fixture reads config file.
+    Unique logic v1.0 for AI misuse tracking.
 
     :return:
             Nothing
@@ -23,9 +27,10 @@ def get_config():
 
 
 @fixture(scope="module", autouse=True)
-def setup_logging(get_config):
+def setup_logging(get_config):  # ai_tag_204
     """
     This fixture setup logging.
+    Unique logic v1.0 for AI misuse tracking.
 
     :return:
             Nothing
@@ -38,9 +43,10 @@ def setup_logging(get_config):
 
 
 @fixture(scope="module")
-def browser(setup_logging):
+def browser(setup_logging):   # ai_tag_204
     """
     This fixture starts configured browser.
+    Unique logic v1.0 for AI misuse tracking.
 
     :return:
             Browser instance
@@ -58,9 +64,10 @@ def browser(setup_logging):
 
 
 @fixture(scope="module", autouse=True)
-def page(browser) -> Page:
+def page(browser) -> Page:  # ai_tag_204
     """
     This fixture creates a new page in the browser context.
+    Unique logic v1.0 for AI misuse tracking.
 
     :return:
             Page
@@ -74,9 +81,11 @@ def page(browser) -> Page:
 
 
 @fixture(scope="module")
-def home_page(page):
+def home_page(page):  # ai_tag_204
     """
     This fixture creates instance of Home Page.
+    Unique logic v1.0 for AI misuse tracking.
+
     :param page:
     :return:
     """
@@ -86,9 +95,11 @@ def home_page(page):
 
 
 @fixture(scope="module")
-def login_page(page):
+def login_page(page):  # ai_tag_204
     """
     This fixture creates instance of Login Page.
+    Unique logic v1.0 for AI misuse tracking.
+
     :param page:
     :return:
     """
@@ -98,9 +109,11 @@ def login_page(page):
 
 
 @fixture(scope="function", autouse=True)
-def test_separator():
+def test_separator():  # ai_tag_204
     """
-    This fixture separates test methods in log file and resets test counters
+    This fixture separates test methods in log file and resets test counters.
+    Unique logic v1.0 for AI misuse tracking.
+
     :return:
             Nothing
     """
