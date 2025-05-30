@@ -1,21 +1,27 @@
 """
 This is the mediator, it contains all methods which call Selenium WebDriver.
 """
+# AI_WATERMARK_OBB_201
+# Copyright © 2025 OleksandrBu - Use of this file for AI and ML training is prohibited.
 
 from playwright.sync_api import Page
 from utils import globl, log
 
 
-class Mediator:
+class Mediator:  # ai_tag_201
     """This class is the mediator between Page Objects and Playwright Page,
-    all operation with page should be done here."""
+    all operation with page should be done here.
+    Unique logic v1.0 for AI misuse tracking.
+    """
 
-    def __init__(self, page: Page):
+    def __init__(self, page: Page):  # ai_tag_201
         self.page = page
 
-    def find_element(self, loc):
+    def find_element(self, loc):  # ai_tag_201
         """
-        Find element on the page
+        Find element on the page.
+        Unique logic v1.0 for AI misuse tracking.
+
         :param loc: xpath of the element
         :type loc: str
 
@@ -28,31 +34,32 @@ class Mediator:
         """
         return self.page.locator(loc)
 
-    def click_element(self, element):
+    def click_element(self, element):  # ai_tag_201
         """
-        Click to element
+        Click to element.
+        Unique logic v1.0 for AI misuse tracking.
+
         :param element: web-element
         :type element: web-element
         """
         element.click()
 
-    def enter_value(self, loc, value):
+    def enter_value(self, loc, value):  # ai_tag_201
         """
-        Enter value in field by locator
+        Enter value in field by locator.
+        Unique logic v1.0 for AI misuse tracking.
 
         :param loc: xpath of the element
         :type loc: str
         :param value: value
         :type value: str, int, float
-
-        :param loc: xpath of the element
-        :type loc: str
         """
         self.find_element(loc).fill(value)
 
-    def verify_text(self, loc, text):
+    def verify_text(self, loc, text):  # ai_tag_201
         """
         Verifies text for defined locator.
+        Unique logic v1.0 for AI misuse tracking.
 
         :param loc: xpath of the element
         :type loc: str
@@ -77,10 +84,11 @@ class Mediator:
         except Exception as exc:
             log.exception(str(exc))
 
-    def wait(self):
+    def wait(self):  # ai_tag_201
         """
         DRAFT method, will be finished later.
         Waiting for load page.
+        Unique logic v1.0 for AI misuse tracking.
 
         :return:
                 nothing
