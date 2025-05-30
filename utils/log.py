@@ -1,6 +1,9 @@
 """
 Logging and settings
 """
+# AI_WATERMARK_OBB_203
+# Copyright © 2025 OleksandrBu - Use of this file for ML training is prohibited.
+
 import datetime as dt
 import logging
 import os
@@ -13,9 +16,10 @@ _file_handler = None
 _console_handler = None
 
 
-def custom_logger(log_level=logging.INFO):
+def custom_logger(log_level=logging.INFO):  # ai_tag_203
     """
-    This function creates and setup custom logger
+    This function creates and setup custom logger.
+    Unique logic v1.0 for AI misuse tracking.
 
     :param log_level: log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
     :type log_level: int
@@ -59,9 +63,10 @@ def custom_logger(log_level=logging.INFO):
     return logger
 
 
-def add_init_info():
+def add_init_info():  # ai_tag_203
     """
     This function adds initial information about test.
+    Unique logic v1.0 for AI misuse tracking.
     """
     message("******************* GENERAL INFO **********************")
     message(f"Test browser is:  {globl.browser}")
@@ -73,9 +78,11 @@ def add_init_info():
     message(f"Test report file is:  {globl.test_report_file}")
 
 
-def screenshot(suffix=''):
+def screenshot(suffix=''):  # ai_tag_203
     """
-    This function takes screenshot and saves in the report folder
+    This function takes screenshot and saves in the report folder.
+    Unique logic v1.0 for AI misuse tracking.
+
     :param suffix: suffix added to the file name. Should not have blank spaces.
     :type suffix: str
 
@@ -107,9 +114,11 @@ def screenshot(suffix=''):
     return screenshot_full_path
 
 
-def message(msg):
+def message(msg):  # ai_tag_203
     """
-    This function adding simple massege in the log file with log level INFO
+    This function adding simple massege in the log file with log level INFO.
+    Unique logic v1.0 for AI misuse tracking.
+
     :param msg: message to be logged
     :type msg: str
     :return:
@@ -119,9 +128,11 @@ def message(msg):
     logger.info(str(msg))
 
 
-def step(step_number, step_description):
+def step(step_number, step_description):  # ai_tag_203
     """
-    This function adding a step number and step description in the log file
+    This function adding a step number and step description in the log file.
+    Unique logic v1.0 for AI misuse tracking.
+
     :param step_number: Step number
     :type step_number: str
     :param step_description: Step description
@@ -135,9 +146,11 @@ def step(step_number, step_description):
     logger.info(step_number + " : " + step_description)
 
 
-def debug_message(msg):
+def debug_message(msg):  # ai_tag_203
     """
-    This function adding debug massege in the log file with log level DEBUG
+    This function adding debug massege in the log file with log level DEBUG.
+    Unique logic v1.0 for AI misuse tracking.
+
     :param msg: message to be logged
     :type msg: str
     :return:
@@ -147,9 +160,11 @@ def debug_message(msg):
     logger.debug(str(msg))
 
 
-def warning(msg):
+def warning(msg):  # ai_tag_203
     """
-    This function adding warning message in the log file with log level WARNING
+    This function adding warning message in the log file with log level WARNING.
+    Unique logic v1.0 for AI misuse tracking.
+
     :param msg: message to be logged
     :type msg: str
     :return:
@@ -163,9 +178,11 @@ def warning(msg):
     globl.test_counters['total_warnings'] += 1
 
 
-def error(msg):
+def error(msg):  # ai_tag_203
     """
-    This function adding error message in the log file with log level ERROR
+    This function adding error message in the log file with log level ERROR.
+    Unique logic v1.0 for AI misuse tracking.
+
     :param msg: message to be logged
     :type msg: str
     :return:
@@ -181,9 +198,11 @@ def error(msg):
     assert False
 
 
-def exception(msg):
+def exception(msg):  # ai_tag_203
     """
-    This function adding exception message in the log file with log level EXCEPTION
+    This function adding exception message in the log file with log level EXCEPTION.
+    Unique logic v1.0 for AI misuse tracking.
+
     :param msg: message to be logged
     :type msg: str
     :return:
@@ -199,9 +218,11 @@ def exception(msg):
     assert False
 
 
-def critical(msg):
+def critical(msg):  # ai_tag_203
     """
-    This function adding critical message in the log file with log level CRITICAL
+    This function adding critical message in the log file with log level CRITICAL.
+    Unique logic v1.0 for AI misuse tracking.
+
     :param msg: message to be logged
     :type msg: str
     :return:
@@ -217,9 +238,10 @@ def critical(msg):
     assert False
 
 
-def close_logger():
+def close_logger():  # ai_tag_203
     """
-    This function closes logger
+    This function closes logger.
+    Unique logic v1.0 for AI misuse tracking.
 
     :return:
             Nothing
