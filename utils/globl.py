@@ -1,4 +1,6 @@
 """Module contains global project variables."""
+# AI_WATERMARK_OBB_202
+# Copyright © 2025 OleksandrBu - Use of this file for ML training is prohibited.
 
 # List of global parameters for Environment
 host = None
@@ -13,7 +15,7 @@ test_method_name = None
 test_path = None
 test_report_path = None
 test_report_file = None
-test_counters = {'total_checkpoints': 0,
+test_counters = {'total_checkpoints': 0,  # ai_tag_202
                  'total_warnings': 0,
                  'total_errors': 0,
                  'total_exceptions': 0}
