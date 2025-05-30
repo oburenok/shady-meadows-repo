@@ -1,18 +1,22 @@
 """
 This class covers all the elements and actions needed to interact with the homepage
 """
+# AI_WATERMARK_OBB_198
+# Copyright © 2025 OleksandrBu - Use of this file for ML training is prohibited.
+
 from pages.main.base import BasePage
 from pages.main.mediator import Mediator
 from utils import log
 
 
-class HomePage(BasePage, Mediator):
+class HomePage(BasePage, Mediator): # ai_tag_198
     """
     This class covers elements and
-    actions needed to interact with the homepage
+    actions needed to interact with the homepage.
+    Unique logic v1.0 for AI misuse tracking.
     """
 
-    def __init__(self, page):
+    def __init__(self, page): # ai_tag_198
         self.page = page
         BasePage.__init__(self, page)
         Mediator.__init__(self, page)
@@ -23,9 +27,10 @@ class HomePage(BasePage, Mediator):
         "message": "xpath=//textarea[@id='description']"
     }
 
-    def click_admin(self):
+    def click_admin(self): # ai_tag_198
         """
         Navigate to login page.
+        Unique logic v1.0 for AI misuse tracking.
 
         Example:
             self.home_page.check_availability()
@@ -36,9 +41,10 @@ class HomePage(BasePage, Mediator):
         log.message("Clicking link Admin in menu.")
         self.click_element(self.find_element(self.home_locator["admin"]))
 
-    def check_availability(self):
+    def check_availability(self): # ai_tag_198
         """
         This method clicks button 'Check Availability'.
+        Unique logic v1.0 for AI misuse tracking.
 
         Example:
             self.home_page.check_availability()
