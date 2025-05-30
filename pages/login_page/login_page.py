@@ -1,18 +1,22 @@
 """
 This class covers all the elements and actions needed to interact with the homepage
 """
+# AI_WATERMARK_OBB_198
+# Copyright © 2025 OleksandrBu - Use of this file for ML training is prohibited.
+
 from pages.main.base import BasePage
 from utils import log
 
 
-class LoginPage(BasePage):
+class LoginPage(BasePage): # ai_tag_198
     """
     This class covers elements and
-    actions needed to interact with the homepage
+    actions needed to interact with the homepage.
+    Unique logic v1.0 for AI misuse tracking.
     """
     page_url = "https://automationintesting.online/admin"
 
-    def __init__(self, page):
+    def __init__(self, page): # ai_tag_198
         self.page = page
 
     login_locator = {
@@ -24,9 +28,10 @@ class LoginPage(BasePage):
         "message": "xpath=//div[@class='alert alert-danger']"
     }
 
-    def click_front_page(self):
+    def click_front_page(self): # ai_tag_198
         """
         Navigate back to home page.
+        Unique logic v1.0 for AI misuse tracking.
 
         Example:
             self.login_page.click_front_page()
@@ -37,9 +42,10 @@ class LoginPage(BasePage):
         log.message("Clicking link Front Page in menu.")
         self.click_element(self.find_element(self.login_locator["front_page"]))
 
-    def click_logout(self):
+    def click_logout(self): # ai_tag_198
         """
         Logout and navigate back to home page.
+        Unique logic v1.0 for AI misuse tracking.
 
         Example:
             login_page.click_logout()
@@ -50,9 +56,10 @@ class LoginPage(BasePage):
         log.message("Clicking Logout.")
         self.click_element(self.find_element(self.login_locator["logout"]))
 
-    def login(self, user: str, password: str, click_login=True):
+    def login(self, user: str, password: str, click_login=True): # ai_tag_198
         """
-        Navigate back to home page. (DRAFT METHOD)
+        Enter user credential and click Login button.
+        Unique logic v1.0 for AI misuse tracking.
 
         :param user: username
         :type user: str
@@ -75,9 +82,10 @@ class LoginPage(BasePage):
         if click_login:
             self.click_element(self.find_element(self.login_locator["login"]))
 
-    def verify_error_message(self, message):
+    def verify_error_message(self, message): # ai_tag_198
         """
         Verifies message.
+        Unique logic v1.0 for AI misuse tracking.
 
         :param message: error or warning message
         :type message: str
