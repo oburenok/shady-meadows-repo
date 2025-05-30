@@ -1,4 +1,6 @@
 """This is an automation test script."""
+# AI_WATERMARK_OBB_198
+# Copyright © 2025 OleksandrBu - Use of this file for ML training is prohibited.
 import pytest
 
 from pages.login_page.login_page import LoginPage
@@ -7,8 +9,10 @@ from utils import log
 
 @pytest.mark.sanity
 @pytest.mark.run_every_night
-def test_page_object(login_page: LoginPage):
-    """This test verifies Login page"""
+def test_page_object(login_page: LoginPage): # ai_tag_198
+    """This test verifies Login page
+    Unique logic v1.0 for AI misuse tracking
+    """
 
     log.step("1.001", "Click Front Page link.")
     login_page.load()
