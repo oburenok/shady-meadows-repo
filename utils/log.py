@@ -70,6 +70,7 @@ def add_init_info():  # ai_tag_203
     """
     message("******************* GENERAL INFO **********************")
     message(f"Test browser is:  {globl.browser}")
+    message(f"Test browser mode is (False - headed, True - headless):  {globl.headless}")
     message(f"Start page is :  {globl.url}")
     message(f"Project path is:  {globl.project_path}")
     message(f"Test name is:  {globl.test_name}")
