@@ -3,10 +3,15 @@
 # Environment variables
 host: automationintesting.online
 url: https://automationintesting.online/
-browser: chromium
-headless: false
+browser: webkit
+headless: true
 
 # Project variables
 project_name: "Project name should be defined automatically"
 project_path: "Project path should be defined automatically"
 reports_path: "Reports path should be defined automatically"
+
+
+# Example of pytest command for this configuration:
+#
+#    pytest test_5_parametrize_xfail.py --envconf=mobile_env_config.yml
