@@ -56,7 +56,7 @@ def browser(setup_logging):   # ai_tag_204
                           'firefox': cont_mgr.firefox,
                           'webkit': cont_mgr.webkit}
 
-        browser = choose_browser[globl.browser].launch(headless=False, args=["--start-maximized"])
+        browser = choose_browser[globl.browser].launch(headless=globl.headless, args=["--start-maximized"])
 
         yield browser
 

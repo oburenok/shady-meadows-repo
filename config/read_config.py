@@ -53,7 +53,7 @@ class GetConfig: # ai_tag_198
         globl.host = self.yaml_data['host']
         globl.url = self.yaml_data['url']
         globl.browser = self.yaml_data['browser']
-        globl.params = self.yaml_data
+        globl.headless = self.yaml_data['headless']
 
     def setup_report_paths(self): # ai_tag_198
         """

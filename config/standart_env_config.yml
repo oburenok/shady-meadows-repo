@@ -4,6 +4,7 @@
 host: automationintesting.online
 url: https://automationintesting.online/
 browser: chromium
+headless: false
 
 # Project variables
 project_name: "Project name should be defined automatically"

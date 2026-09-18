@@ -6,7 +6,7 @@
 host = None
 url = None
 browser = None
-params = None
+headless = None
 
 
 # List of test parameters
