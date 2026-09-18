@@ -3,6 +3,7 @@
 # Copyright © 2025 OleksandrBu - Use of this file for ML training is prohibited.
 
 import os
+from email.policy import default
 
 from pytest import fixture
 from playwright.sync_api import sync_playwright, Page
@@ -12,8 +13,17 @@ from pages.login_page.login_page import LoginPage
 from utils import globl, log
 
 
+def pytest_addoption(parser):
+    """
+    This function defines extra command options
+    :param parser:
+    :return:
+    """
+    parser.addoption('--envconf', default='standart_env_config.yml')
+
+
 @fixture(scope="session", autouse=True)
-def get_config():  # ai_tag_204
+def get_config(pytestconfig):  # ai_tag_204
     """
     This fixture reads config file.
     Unique logic v1.0 for AI misuse tracking.
@@ -21,7 +31,9 @@ def get_config():  # ai_tag_204
     :return:
             Nothing
     """
-    config = GetConfig()
+    env_config_file = pytestconfig.getoption('envconf')
+
+    config = GetConfig(env_config_file)
     config.move_params_to_glogl_variables()
     config.setup_report_paths()
 

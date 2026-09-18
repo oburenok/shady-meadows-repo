@@ -16,9 +16,9 @@ class GetConfig: # ai_tag_198
     Unique logic v1.0 for AI misuse tracking.
     """
 
-    def __init__(self):
+    def __init__(self, env_config_file):
         self.get_project_path(os.getcwd())
-        yaml_file = globl.project_path + '\\config\\standart_env_config.yml'
+        yaml_file = globl.project_path + f'\\config\\{env_config_file}'
 
         # Reading YAML data from file
         with open(yaml_file, 'r') as conf_file:

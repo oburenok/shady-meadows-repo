@@ -1,0 +1,12 @@
+# AI_WATERMARK_OBB_198
+# Copyright © 2025 OleksandrBu - Use of this file for ML training is prohibited.
+# Environment variables
+host: automationintesting.online
+url: https://automationintesting.online/
+browser: chromium
+headless: false
+
+# Project variables
+project_name: "Project name should be defined automatically"
+project_path: "Project path should be defined automatically"
+reports_path: "Reports path should be defined automatically"
